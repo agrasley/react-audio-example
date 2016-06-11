@@ -1,5 +1,6 @@
 'use strict'
 
+const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
     filename: 'index.js',
     path: __dirname
   },
+  plugins: [new webpack.DefinePlugin({'process.env.NODE_ENV': '"production"'})],
   module: {
     loaders: [{
       test: /\.jsx?$/,
